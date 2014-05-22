@@ -9,7 +9,7 @@ public class GameFrame extends JFrame{
         add(new GamePanel());
         setTitle("***DEV NAME*** Peasants vs Heros ***DEV NAME***");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(700,300);
+        setSize(700,700);
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
