@@ -5,6 +5,6 @@ import Graphics.GameFrame;
  */
 public class main {
     public static void main(String args[]){
-        new GameFrame();
+        new GameLogic(new GameFrame());
     }
 }

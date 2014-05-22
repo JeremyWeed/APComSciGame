@@ -5,8 +5,10 @@ package Graphics;
  */
 import javax.swing.JFrame;
 public class GameFrame extends JFrame{
+    public GamePanel g;
     public GameFrame(){
-        add(new GamePanel());
+        g = new GamePanel();
+        add(g);
         setTitle("***DEV NAME*** Peasants vs Heros ***DEV NAME***");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(700,700);

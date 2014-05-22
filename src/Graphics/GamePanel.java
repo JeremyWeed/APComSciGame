@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import javax.swing.ImageIcon;
 public class GamePanel extends JPanel{
-    int pix = 10;
+    public int pix = 10;
     BufferedImage oil;
 
     public GamePanel(){
