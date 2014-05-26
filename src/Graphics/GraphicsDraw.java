@@ -2,7 +2,7 @@ package Graphics;
 
 
 
-import mapStuff.Acessory;
+import mapStuff.Accessory;
 import mapStuff.Background;
 import heros.Hero;
 import towers.Tower;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  */
 public class GraphicsDraw{
     GameFrame gf;
-    public ArrayList<Acessory> acess = new ArrayList<Acessory>();
+    public ArrayList<Accessory> acess = new ArrayList<Accessory>();
     public ArrayList<Tower> towers = new ArrayList<Tower>();
     public ArrayList<Hero> heros = new ArrayList<Hero>();
     public Background background;
@@ -53,7 +53,7 @@ public class GraphicsDraw{
         gf.bufferStrategy.show();
     }
 
-    public void setupGame(Background b, ArrayList<Acessory> a){
+    public void setupGame(Background b, ArrayList<Accessory> a){
         background = b;
         acess = a;
         gf.setSize(b.x,b.y);
