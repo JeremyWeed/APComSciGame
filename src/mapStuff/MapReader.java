@@ -18,7 +18,7 @@ public class MapReader {
 
     public MapReader(String dirLocation)throws IOException{
         dir = Paths.get(dirLocation);
-        mapFile = dirLocation.split("/")[dirLocation.split("/").length - 1] + ".map";
+        mapFile = "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".map";
         mapDir = Paths.get(dirLocation + mapFile);
         if(!Files.exists(mapDir)  || !Files.isReadable(mapDir)){
             throw new IOException();
@@ -36,18 +36,18 @@ public class MapReader {
 
             if (setup.get(i).contains("background")){
 
-                background = new Background(setup.get(i).split("=")[1]);
+                background = new Background(dir + "/" + setup.get(i).split("=")[1]);
 
             }else if (setup.get(i).contains("acc")){
 
-                String file = setup.get(i).split("=")[1];
-                String locations = setup.get(i).split("=")[1].substring(setup.get(i).split("=")[1].indexOf(";"));
+                String file = dir + "/" + setup.get(i).split("=")[1].split(";")[0];
+                String locations = setup.get(i).split("=")[1].substring(setup.get(i).split("=")[1].indexOf(";") + 1);
                 int[][] loc = parseLoc(locations);
                 accessories.add(new Accessory(loc, file));
 
             }else if (setup.get(i).contains("end")){
 
-                end = new End(parseLoc(setup.get(i).split("=")[1].substring(setup.get(i).split("=")[1].indexOf(";")))[0], setup.get(i).split("=")[1].split(";")[0]);
+                end = new End(parseLoc(setup.get(i).split("=")[1].substring(setup.get(i).split("=")[1].indexOf(";") + 1))[0], dir + "/" + setup.get(i).split("=")[1].split(";")[0]);
 
             }else if (setup.get(i).contains("start")){
                 start = parseLoc(setup.get(i).split("=")[1])[0];

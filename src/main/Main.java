@@ -4,7 +4,10 @@ import Graphics.GameFrame;
 import Graphics.GraphicsDraw;
 import mapStuff.Accessory;
 import mapStuff.Background;
+import mapStuff.Map;
+import mapStuff.MapReader;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -12,13 +15,18 @@ import java.util.ArrayList;
  */
 public class Main {
     public static void main(String args[]){
-        Background b = new Background(350, 350, "resources/Map1 - EasyMode Scrubs.png");
-        ArrayList<Accessory> a = new ArrayList<Accessory>();
-        a.add(new Accessory(6,3,"resources/Goat.png"));
+        Map map = null;
+        try {
+            MapReader r = new MapReader("resources/Map1");
+            map = r.read();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         GameFrame g = new GameFrame();
-        GraphicsDraw gd = new GraphicsDraw(g);
+        GraphicsDraw gd = new GraphicsDraw(g, map);
         GameLogic gl = new GameLogic(gd);
-        gd.setupGame(b,a);
+        gd.setupGame();
         new Thread(gl).start();
     }
 }

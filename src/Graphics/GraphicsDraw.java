@@ -5,6 +5,7 @@ package Graphics;
 import mapStuff.Accessory;
 import mapStuff.Background;
 import heros.Hero;
+import mapStuff.Map;
 import towers.Tower;
 
 import java.awt.*;
@@ -15,12 +16,12 @@ import java.util.ArrayList;
  */
 public class GraphicsDraw{
     GameFrame gf;
-    public ArrayList<Accessory> acess = new ArrayList<Accessory>();
+    Map map;
     public ArrayList<Tower> towers = new ArrayList<Tower>();
     public ArrayList<Hero> heros = new ArrayList<Hero>();
-    public Background background;
-    public GraphicsDraw(GameFrame gf){
+    public GraphicsDraw(GameFrame gf, Map map){
         this.gf = gf;
+        this.map = map;
     }
 
     public void basicRender(){
@@ -39,10 +40,7 @@ public class GraphicsDraw{
 
     public void gameRender(){
         Graphics2D g = (Graphics2D) gf.bufferStrategy.getDrawGraphics();
-        background.draw(g);
-        for(int i = 0; i < acess.size(); i++){
-            acess.get(i).draw(g);
-        }
+        map.draw(g);
         for(int i = 0; i < towers.size(); i++){
             towers.get(i).draw(g);
         }
@@ -53,10 +51,8 @@ public class GraphicsDraw{
         gf.bufferStrategy.show();
     }
 
-    public void setupGame(Background b, ArrayList<Accessory> a){
-        background = b;
-        acess = a;
-        gf.setSize(b.x,b.y);
-        gf.canvas.setSize(b.x, b.y);
+    public void setupGame(){
+        gf.setSize(map.getX(),map.getY());
+        gf.canvas.setSize(map.getX(), map.getY());
     }
 }

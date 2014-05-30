@@ -1,5 +1,6 @@
 package mapStuff;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -17,4 +18,13 @@ public class Map {
         this.end = end;
         this.accessories = accessories;
     }
+
+    public void draw(Graphics2D g){
+        background.draw(g);
+        for(int i = 0; i < accessories.size(); i++){
+            accessories.get(i).draw(g);
+        }
+    }
+    public int getX(){ return size[0] * 10; }
+    public int getY(){ return size[1] * 10; }
 }

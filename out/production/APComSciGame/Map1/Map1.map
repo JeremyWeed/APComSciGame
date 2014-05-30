@@ -1,0 +1,5 @@
+background=map.png
+size=35,35
+acc=tree.png;3,0;4,0;1,6;5,8;6,3;7,3;8,7
+end=end.png;7,5
+start=0,0
