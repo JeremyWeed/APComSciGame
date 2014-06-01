@@ -3,6 +3,8 @@ package Graphics;
 /**
  * Created by jeremy on 5/20/14.
  */
+import main.Control;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -23,7 +25,8 @@ public class GameFrame extends JFrame{
         panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         panel.setLayout(null);
         panel.add(canvas);
-        setTitle("***DEV NAME*** Peasants vs Heros ***DEV NAME***");
+        panel.addMouseListener(new Control());
+        setTitle("***DEV NAME*** Peasants vs Heroes ***DEV NAME***");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WIDTH,HEIGHT);
         setLocationRelativeTo(null);

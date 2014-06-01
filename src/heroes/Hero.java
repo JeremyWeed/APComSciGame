@@ -1,4 +1,4 @@
-package heros;
+package heroes;
 
 import java.awt.*;
 

@@ -2,9 +2,7 @@ package Graphics;
 
 
 
-import mapStuff.Accessory;
-import mapStuff.Background;
-import heros.Hero;
+import heroes.Hero;
 import mapStuff.Map;
 import towers.Tower;
 
@@ -18,7 +16,7 @@ public class GraphicsDraw{
     GameFrame gf;
     Map map;
     public ArrayList<Tower> towers = new ArrayList<Tower>();
-    public ArrayList<Hero> heros = new ArrayList<Hero>();
+    public ArrayList<Hero> heroes = new ArrayList<Hero>();
     public GraphicsDraw(GameFrame gf, Map map){
         this.gf = gf;
         this.map = map;
@@ -44,15 +42,15 @@ public class GraphicsDraw{
         for(int i = 0; i < towers.size(); i++){
             towers.get(i).draw(g);
         }
-        for(int i = 0; i < heros.size(); i++){
-            heros.get(i).draw(g);
+        for(int i = 0; i < heroes.size(); i++){
+            heroes.get(i).draw(g);
         }
         g.dispose();
         gf.bufferStrategy.show();
     }
 
     public void setupGame(){
-        gf.setSize(map.getX(),map.getY());
-        gf.canvas.setSize(map.getX(), map.getY());
+        gf.setSize(map.getPX(),map.getPY());
+        gf.canvas.setSize(map.getPX(), map.getPY());
     }
 }

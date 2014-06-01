@@ -1,5 +1,7 @@
 package mapStuff;
 
+import main.Var;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -25,6 +27,6 @@ public class Map {
             accessories.get(i).draw(g);
         }
     }
-    public int getX(){ return size[0] * 10; }
-    public int getY(){ return size[1] * 10; }
+    public int getPX(){ return size[0] * Var.GRID_SIZE; }
+    public int getPY(){ return size[1] * Var.GRID_SIZE; }
 }
