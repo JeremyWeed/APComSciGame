@@ -21,11 +21,12 @@ public class GameFrame extends JFrame{
         canvas = new Canvas();
         canvas.setBounds(0, 0, WIDTH, HEIGHT);
         canvas.setIgnoreRepaint(true);
+        canvas.addMouseListener(new Control());
+        canvas.addMouseMotionListener(new Control());
         JPanel panel = (JPanel) getContentPane();
         panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         panel.setLayout(null);
         panel.add(canvas);
-        panel.addMouseListener(new Control());
         setTitle("***DEV NAME*** Peasants vs Heroes ***DEV NAME***");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WIDTH,HEIGHT);
