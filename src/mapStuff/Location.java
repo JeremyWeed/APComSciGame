@@ -2,6 +2,8 @@ package mapStuff;
 
 import main.Entity;
 
+import java.awt.*;
+
 /**
  * Created by jeremy on 6/8/14.
  */
@@ -13,10 +15,18 @@ public class Location {
         this.x = x;
         this.y = y;
     }
-
+    public void draw(Graphics2D g){
+        if(e != null){
+            e.draw(g);
+        }
+    }
+    public static Path toPath(Location l){
+        return new Path(l.x, l.y);
+    }
     public void add(Entity e){
         this.e = e;
     }
+
 
     public boolean equals(Location l){
         if (l.x == x && l.y == y){

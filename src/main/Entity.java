@@ -3,6 +3,8 @@ package main;
 import mapStuff.Grid;
 import mapStuff.Location;
 
+import java.awt.*;
+
 /**
  * Created by jeremy on 6/8/14.
  */
@@ -10,7 +12,9 @@ public abstract class Entity {
     Grid grid = Grid.get();
     Location location;
     public int x, y;
+
     public abstract String getName();
+    public abstract void draw(Graphics2D g);
 
     public void move(int x, int y){
         if(location == null){

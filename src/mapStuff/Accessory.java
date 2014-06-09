@@ -5,12 +5,14 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
+import main.Entity;
 import main.Var;
 
 /**
  * Created by jeremy on 5/24/14.
  */
-public class Accessory {
+public class Accessory extends Entity{
     int[][] grid;
 
     BufferedImage image;
@@ -25,6 +27,10 @@ public class Accessory {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getName(){
+        return image.toString();
     }
 
     public void draw(Graphics2D g){

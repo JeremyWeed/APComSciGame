@@ -2,6 +2,7 @@ package mapStuff;
 
 import main.Entity;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -17,6 +18,12 @@ public class Grid {
     public void setSize(int x, int y){
         grid.x = x;
         grid.y = y;
+    }
+
+    public void draw(Graphics2D g){
+        for (int i = 0; i < locations.size(); i ++){
+            locations.get(i).draw(g);
+        }
     }
 
     public static Grid get(){
@@ -36,6 +43,7 @@ public class Grid {
         l.add(e);
         return true;
     }
+
 
     public void remove(Location l){
         for (int i = 0; i < locations.size(); i++){

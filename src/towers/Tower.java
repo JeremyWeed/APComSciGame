@@ -1,12 +1,12 @@
 package towers;
 
+import main.Entity;
+
 import java.awt.*;
 
 /**
  * Created by jeremy on 5/20/14.
  */
-public class Tower {
+public abstract class Tower extends Entity {
     protected String name;
-    public void draw(Graphics2D g){}
-
 }
