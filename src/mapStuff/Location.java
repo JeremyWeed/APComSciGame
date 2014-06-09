@@ -1,21 +1,33 @@
 package mapStuff;
 
+import main.Entity;
+
 /**
- * Created by jeremy on 6/3/14.
+ * Created by jeremy on 6/8/14.
  */
 public class Location {
-    static Location location = null;
-    static int x,y;
+    public Entity e;
+    public int x, y;
 
-    public static Location get(){
-        if (location == null){
-            location = new Location();
-        }
-        return location;
+    public Location(int x, int y){
+        this.x = x;
+        this.y = y;
     }
 
-    public static void setSize(int x, int y){
-        location.x = x;
-        location.y = y;
+    public void add(Entity e){
+        this.e = e;
+    }
+
+    public boolean equals(Location l){
+        if (l.x == x && l.y == y){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public void move(int x, int y){
+        this.x += x;
+        this.y += y;
     }
 }
