@@ -19,8 +19,9 @@ public class MapReader {
 
     public MapReader(String dirLocation)throws IOException{
         dir = Paths.get(dirLocation);
+        System.out.println(dirLocation);
         mapFile = "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".map";
-        mapFile = "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".map";
+        pathFile = dirLocation + "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".path";
         mapDir = Paths.get(dirLocation + mapFile);
         if(!Files.exists(mapDir)  || !Files.isReadable(mapDir)){
             throw new IOException();
@@ -28,6 +29,7 @@ public class MapReader {
     }
 
     public Map read() throws Exception{
+        PathCreator p;
         Background background = null;
         End end = null;
         int[] size = null;
@@ -60,7 +62,10 @@ public class MapReader {
         if((background == null) || (end == null) || (size == null) || (start == null) || (accessories.size() == 0)){
             throw  new Exception();
         }
-        return new Map(background, size, end, start, accessories);
+        Map m = new Map(background, size, end, start, accessories);
+        p = new PathCreator(pathFile,m);
+        p.read();
+        return m;
     }
 
     public ArrayList<String> parse(Path file){

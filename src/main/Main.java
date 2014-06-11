@@ -28,7 +28,6 @@ public class Main {
         GraphicsDraw gd = new GraphicsDraw(g, map);
         GameLogic gl = new GameLogic(gd);
         gd.setupGame();
-        System.out.println("yo");
         Basic basic = new Basic(gd.map);
         gd.heroes.add(basic);
         new Thread(gl).start();

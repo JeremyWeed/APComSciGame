@@ -21,12 +21,13 @@ public abstract class Hero extends Entity {
     public Map map;
     Grid grid = Grid.get();
     BufferedImage image;
-    public int health, speed;
+    public double health, speed, armor;
 
-    public Hero(Map map, String location, int health, int speed){
+    public Hero(Map map, String location, int health, int speed, int armor){
         this.map = map;
         this.health = health;
         this.speed = speed;
+        this.armor = armor;
         try {
             image = ImageIO.read(new File(location));
         } catch (IOException e) {
@@ -34,7 +35,12 @@ public abstract class Hero extends Entity {
         }
     }
 
-    public abstract void doDamage(int dam, boolean isMagic);
+    public void doDamage(double dam, boolean isMagic){
+        if(!isMagic)
+            health -= dam/armor;
+        else
+            health -= dam;
+    }
 
      public void advance() {
          if (location == null) {

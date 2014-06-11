@@ -10,11 +10,25 @@ import java.util.Scanner;
  */
 public class PathCreator{
     Scanner s = null;
-    public PathCreator(String location){
+    Map map;
+
+    public PathCreator(String location, Map map){
+        this.map = map;
         try{
             s = new Scanner(new File(location));
         }catch(FileNotFoundException e){
             e.printStackTrace();
         }
+    }
+
+    public void read(){
+        for(int y = 0; y < map.size[1]; y++){
+            for (int x = 0; x < map.size[0]; x++){
+                if(s.nextInt() == 1){
+                    Path.add(new Path(x,y));
+                }
+            }
+        }
+        s.close();
     }
 }

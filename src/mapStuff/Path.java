@@ -21,8 +21,10 @@ public class Path {
     public static Path findNext(Path p){
         Path e = Path.paths.get(0);
         for (int i = 1; i < Path.paths.size(); i++){
-            if (p.closeness(e) > p.closeness(Path.paths.get(i))){
-                e = Path.paths.get(i);
+            if(!p.equals(Path.paths.get(i))){
+                if (p.closeness(e) > p.closeness(Path.paths.get(i))) {
+                    e = Path.paths.get(i);
+                }
             }
         }
         return e;
@@ -38,5 +40,12 @@ public class Path {
 
     public void remove(){
         paths = new ArrayList<Path>();
+    }
+
+    public boolean equals(Path p){
+        if(p.x == x && p.y == y)
+            return true;
+        else
+            return false;
     }
 }

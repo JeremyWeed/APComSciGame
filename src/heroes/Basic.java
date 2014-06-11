@@ -14,7 +14,7 @@ public class Basic extends Hero{
     }
 
     public Basic(Map map){
-        super(map, "resources/Goat.png", 1, 1);
+        super(map, "resources/Goat.png", 1, 1, 1);
     }
 
 
