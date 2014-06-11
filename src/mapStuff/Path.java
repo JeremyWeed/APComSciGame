@@ -35,4 +35,8 @@ public class Path {
     public int closeness(Path p){
         return Math.abs(x - p.x) + Math.abs(y - p.y);
     }
+
+    public void remove(){
+        paths = new ArrayList<Path>();
+    }
 }

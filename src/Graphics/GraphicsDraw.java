@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class GraphicsDraw{
     GameFrame gf;
-    Map map;
+    public Map map;
     public ArrayList<Tower> towers = new ArrayList<Tower>();
     public ArrayList<Hero> heroes = new ArrayList<Hero>();
     public GraphicsDraw(GameFrame gf, Map map){
