@@ -14,10 +14,12 @@ public class MapReader {
 
     Path dir;
     String mapFile;
+    String pathFile;
     Path mapDir;
 
     public MapReader(String dirLocation)throws IOException{
         dir = Paths.get(dirLocation);
+        mapFile = "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".map";
         mapFile = "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".map";
         mapDir = Paths.get(dirLocation + mapFile);
         if(!Files.exists(mapDir)  || !Files.isReadable(mapDir)){

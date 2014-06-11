@@ -34,6 +34,8 @@ public abstract class Hero extends Entity {
         }
     }
 
+    public abstract void doDamage(int dam);
+
      public void advance() {
          if (location == null) {
              location = new Location(map.start[0], map.start[1]);
@@ -46,7 +48,7 @@ public abstract class Hero extends Entity {
              }
          }
      }
-    
+
     public void draw(Graphics2D g){
         advance();
         g.drawImage(image, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
