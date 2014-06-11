@@ -34,7 +34,7 @@ public abstract class Hero extends Entity {
         }
     }
 
-    public abstract void doDamage(int dam);
+    public abstract void doDamage(int dam, boolean isMagic);
 
      public void advance() {
          if (location == null) {
