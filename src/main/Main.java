@@ -2,14 +2,9 @@ package main;
 
 import Graphics.GameFrame;
 import Graphics.GraphicsDraw;
-import heroes.Basic;
-import mapStuff.Accessory;
-import mapStuff.Background;
+import heroes.BasicHero;
 import mapStuff.Map;
 import mapStuff.MapReader;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * Created by jeremy on 5/20/14.
@@ -28,8 +23,8 @@ public class Main {
         GraphicsDraw gd = new GraphicsDraw(g, map);
         GameLogic gl = new GameLogic(gd);
         gd.setupGame();
-        Basic basic = new Basic(gd.map);
-        gd.heroes.add(basic);
+        BasicHero basicHero = new BasicHero(gd.map);
+        gd.heroes.add(basicHero);
         new Thread(gl).start();
 
     }

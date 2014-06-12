@@ -1,11 +1,6 @@
 package main;
 
-import Graphics.GameFrame;
 import Graphics.GraphicsDraw;
-import heroes.Basic;
-
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
 /**
  * Created by jeremy on 5/22/14.

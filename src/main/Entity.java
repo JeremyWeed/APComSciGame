@@ -30,4 +30,8 @@ public abstract class Entity {
         location = new Location(x, y);
         return grid.add(location, this);
     }
+
+    public boolean isHero(){
+        return false;
+    }
 }

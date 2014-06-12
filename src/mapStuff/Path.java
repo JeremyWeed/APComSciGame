@@ -18,15 +18,18 @@ public class Path {
         this.y = y;
     }
 
-    public static Path findNext(Path p){
-        Path e = Path.paths.get(0);
-        for (int i = 1; i < Path.paths.size(); i++){
-            if(!p.equals(Path.paths.get(i))){
-                if (p.closeness(e) > p.closeness(Path.paths.get(i))) {
-                    e = Path.paths.get(i);
+    public static Path findNext(Path p, ArrayList<Path> paths){
+        Path e = paths.get(0);
+        int loc = 0;
+        for (int i = 1; i < paths.size(); i++){
+            if(!p.equals(paths.get(i))){
+                if (p.closeness(e) > p.closeness(paths.get(i))) {
+                    e = paths.get(i);
+                    loc = i;
                 }
             }
         }
+        paths.remove(loc);
         return e;
     }
 

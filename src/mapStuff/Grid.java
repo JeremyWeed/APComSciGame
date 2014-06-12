@@ -33,6 +33,15 @@ public class Grid {
             return grid;
     }
 
+    public Location get(Location l){
+        for (int i = 0; i < locations.size(); i++) {
+            if (locations.get(i).equals(l)) {
+                return locations.get(i);
+            }
+        }
+        return null;
+    }
+
     public boolean add(Location l, Entity e){
         for (int i = 0; i < locations.size(); i++){
             if (locations.get(i).equals(l)){

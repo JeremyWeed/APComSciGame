@@ -23,11 +23,14 @@ public class Location {
     public static Path toPath(Location l){
         return new Path(l.x, l.y);
     }
-    public void add(Entity e){
+
+    void add(Entity e){
         this.e = e;
     }
 
-
+    public double distanceFrom(Location l){
+        return Math.sqrt(Math.pow(x-l.x, 2) + Math.pow(y-l.y, 2));
+    }
     public boolean equals(Location l){
         if (l.x == x && l.y == y){
             return true;
