@@ -3,6 +3,7 @@ package Graphics;
 
 
 import heroes.Hero;
+import main.Entities;
 import mapStuff.Map;
 import towers.Tower;
 
@@ -15,8 +16,6 @@ import java.util.ArrayList;
 public class GraphicsDraw{
     GameFrame gf;
     public Map map;
-    public ArrayList<Tower> towers = new ArrayList<Tower>();
-    public ArrayList<Hero> heroes = new ArrayList<Hero>();
     public GraphicsDraw(GameFrame gf, Map map){
         this.gf = gf;
         this.map = map;
@@ -39,11 +38,11 @@ public class GraphicsDraw{
     public void gameRender(){
         Graphics2D g = (Graphics2D) gf.bufferStrategy.getDrawGraphics();
         map.draw(g);
-        for(int i = 0; i < towers.size(); i++){
-            towers.get(i).draw(g);
+        for(int i = 0; i < Entities.towers.size(); i++){
+            Entities.towers.get(i).draw(g);
         }
-        for(int i = 0; i < heroes.size(); i++){
-            heroes.get(i).draw(g);
+        for(int i = 0; i < Entities.heroes.size(); i++){
+            Entities.heroes.get(i).draw(g);
         }
         g.dispose();
         gf.bufferStrategy.show();

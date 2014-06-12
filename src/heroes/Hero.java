@@ -1,5 +1,6 @@
 package heroes;
 
+import main.Entities;
 import main.Entity;
 import main.Var;
 import mapStuff.Grid;
@@ -50,7 +51,11 @@ public abstract class Hero extends Entity {
          if (location == null) {
              location = new Location(map.start[0], map.start[1]);
              grid.add(location, this);
-         } else {
+         }else if(health <= 0) {
+              grid.remove(location);
+              Entities.heroes.remove(this);
+         }else{
+
              if(step > speed) {
                  step = 0;
                  Location l = Path.findNext(Location.toPath(location), pathsNotTaken).toLocation();

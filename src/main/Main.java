@@ -5,6 +5,7 @@ import Graphics.GraphicsDraw;
 import heroes.BasicHero;
 import mapStuff.Map;
 import mapStuff.MapReader;
+import towers.BasicTower;
 
 /**
  * Created by jeremy on 5/20/14.
@@ -24,7 +25,9 @@ public class Main {
         GameLogic gl = new GameLogic(gd);
         gd.setupGame();
         BasicHero basicHero = new BasicHero(gd.map);
-        gd.heroes.add(basicHero);
+        Entities.heroes.add(basicHero);
+        BasicTower bt = new BasicTower(gd.map,5,6);
+        Entities.towers.add(bt);
         new Thread(gl).start();
 
     }

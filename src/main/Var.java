@@ -1,14 +1,20 @@
 package main;
 
+import mapStuff.Map;
+
 /**
  * Created by jeremy on 5/24/14.
  */
 public class Var {
     public static final int GRID_SIZE = 35;
-    public static int makeNormal(int i){
-        if (i < 0)
+    public static int makeNormal(int x, boolean isX, Map map){
+        if (x < 0)
             return 0;
+        else if (isX && x > map.size[0])
+            return map.size[0];
+        else if (!isX && x > map.size[1])
+            return map.size[1];
         else
-            return i;
+            return x;
     }
 }
