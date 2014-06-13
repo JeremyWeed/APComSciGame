@@ -16,7 +16,7 @@ public class GameLogic implements Runnable {
             gd.gameRender();
             update();
             try {
-                Thread.sleep(50);
+                Thread.sleep(Var.GAME_TICK);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

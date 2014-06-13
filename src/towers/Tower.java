@@ -103,6 +103,7 @@ public abstract class Tower extends Entity {
     public void attack(){
         doSplash =  false;
         if(step > speed) {
+            step = 0;
             attackee = findClosest(findHeroes(range));
             if (attackee == null) {
                 return;

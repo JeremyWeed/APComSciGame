@@ -19,17 +19,18 @@ public class Path {
     }
 
     public static Path findNext(Path p, ArrayList<Path> paths){
-        Path e = paths.get(0);
-        int loc = 0;
+        Path e = p;
+        int loc = -1;
         for (int i = 1; i < paths.size(); i++){
             if(!p.equals(paths.get(i))){
-                if (p.closeness(e) > p.closeness(paths.get(i))) {
+                if (p.closeness(paths.get(i)) == 1) {
                     e = paths.get(i);
                     loc = i;
                 }
             }
         }
-        paths.remove(loc);
+        if(loc != -1)
+            paths.remove(loc);
         return e;
     }
 
@@ -47,8 +48,8 @@ public class Path {
         return new Location(x,y);
     }
 
-    public int closeness(Path p){
-        return Math.abs(x - p.x) + Math.abs(y - p.y);
+    public double closeness(Path p){
+        return Math.sqrt(Math.pow(x - p.x, 2) + Math.pow(y - p.y, 2));
     }
 
     public void remove(){

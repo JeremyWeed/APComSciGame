@@ -7,6 +7,7 @@ import mapStuff.Map;
  */
 public class Var {
     public static final int GRID_SIZE = 35;
+    public static final int GAME_TICK = 100;
     public static int makeNormal(int x, boolean isX, Map map){
         if (x < 0)
             return 0;
