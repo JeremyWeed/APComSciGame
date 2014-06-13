@@ -32,6 +32,7 @@ public class Map {
 
     public void draw(Graphics2D g){
         background.draw(g);
+        end.draw(g);
     }
     public int getPX(){ return size[0] * Var.GRID_SIZE; }
     public int getPY(){ return size[1] * Var.GRID_SIZE; }

@@ -4,6 +4,7 @@ package Graphics;
 
 import heroes.Hero;
 import main.Entities;
+import main.Var;
 import mapStuff.Map;
 import towers.Tower;
 
@@ -47,6 +48,13 @@ public class GraphicsDraw{
         for(int i = 0; i < Entities.accessories.size(); i++){
             Entities.accessories.get(i).draw(g);
         }
+        g.dispose();
+        gf.bufferStrategy.show();
+    }
+
+    public void endGame(){
+        Graphics2D g = (Graphics2D) gf.bufferStrategy.getDrawGraphics();
+        g.drawString("GAME OVER", map.size[0] * Var.GRID_SIZE/2, map.size[1] * Var.GRID_SIZE/2);
         g.dispose();
         gf.bufferStrategy.show();
     }

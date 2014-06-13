@@ -1,5 +1,7 @@
 package mapStuff;
 
+import main.Var;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -11,9 +13,9 @@ import java.io.IOException;
  */
 public class End {
     BufferedImage image;
-    int[] location;
-    public End(int[] location, String file){
-        this.location = location;
+    public static Location location;
+    public End(int[] l, String file){
+        location = new Location(l[0], l[1]);
         try {
             image = ImageIO.read(new File(file));
         } catch (IOException e) {
@@ -22,6 +24,6 @@ public class End {
     }
 
     public void draw(Graphics2D g){
-        g.drawImage(image, location[0], location[1], null);
+        g.drawImage(image, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
     }
 }

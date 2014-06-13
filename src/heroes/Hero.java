@@ -2,11 +2,9 @@ package heroes;
 
 import main.Entities;
 import main.Entity;
+import main.GameLogic;
 import main.Var;
-import mapStuff.Grid;
-import mapStuff.Location;
-import mapStuff.Map;
-import mapStuff.Path;
+import mapStuff.*;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -44,7 +42,7 @@ public abstract class Hero extends Entity {
         if(!isMagic)
             health -= dam/armor;
         else
-            health -= dam;
+            health -= dam/(armor/2);
     }
 
      public void advance() {
@@ -68,7 +66,11 @@ public abstract class Hero extends Entity {
                  step++;
              }
          }
+         if(location.equals(End.location)){
+             GameLogic.itsNotOver = true;
+         }
      }
+
 
     public boolean isHero(){
         return true;

@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 public abstract class Tower extends Entity {
     protected String name;
-    BufferedImage tower, bolt;
+    BufferedImage tower, bolt, flash;
     double damage, speed;
     boolean isMagic;
     int range;
@@ -29,8 +29,10 @@ public abstract class Tower extends Entity {
     int step = 0;
     Location location, attackee;
     boolean doSplash = false;
+    int splashStep = 0;
+    Location splashLocation;
 
-    public Tower(Map map, String tower, String bolt, double damage, double speed, int range, boolean isMagic){
+    public Tower(Map map, String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic){
         this.map = map;
         this.damage = damage;
         this.speed = speed;
@@ -39,6 +41,21 @@ public abstract class Tower extends Entity {
         try {
             this.tower = ImageIO.read(new File(tower));
             this.bolt = ImageIO.read(new File(bolt));
+            this.flash = ImageIO.read((new File(flash)));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void upgrade(String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic){
+        this.damage = damage;
+        this.speed = speed;
+        this.range = range;
+        this.isMagic = isMagic;
+        try {
+            this.tower = ImageIO.read(new File(tower));
+            this.bolt = ImageIO.read(new File(bolt));
+            this.flash = ImageIO.read((new File(flash)));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -101,7 +118,7 @@ public abstract class Tower extends Entity {
     }
 
     public void attack(){
-        doSplash =  false;
+
         if(step > speed) {
             step = 0;
             attackee = findClosest(findHeroes(range));
@@ -111,6 +128,7 @@ public abstract class Tower extends Entity {
                 Hero hero = (Hero) attackee.e;
                 hero.doDamage(damage, isMagic);
                 doSplash = true;
+                splashLocation = attackee.copy();
             }
         }else{
             step++;
@@ -119,8 +137,14 @@ public abstract class Tower extends Entity {
     }
      public void draw(Graphics2D g){
          g.drawImage(tower, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
-         if(doSplash)
-             g.drawImage(bolt, attackee.x * Var.GRID_SIZE, attackee.y * Var.GRID_SIZE, null);
+         if(doSplash) {
+             splashStep++;
+             g.drawImage(bolt, splashLocation.x * Var.GRID_SIZE, splashLocation.y * Var.GRID_SIZE, null);
+             if(splashStep > 2) {
+                 splashStep = 0;
+                 doSplash = false;
+             }
+         }
      }
 
 }

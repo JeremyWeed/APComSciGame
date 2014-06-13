@@ -23,8 +23,6 @@ public class Main {
         GraphicsDraw gd = new GraphicsDraw(g, Map.get());
         GameLogic gl = new GameLogic(gd);
         gd.setupGame();
-        BasicHero basicHero = new BasicHero(gd.map);
-        BasicTower bt = new BasicTower(gd.map,5,6);
         new Thread(gl).start();
 
     }

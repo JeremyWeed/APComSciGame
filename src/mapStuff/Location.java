@@ -20,6 +20,9 @@ public class Location {
             e.draw(g);
         }
     }
+    public Location copy(){
+        return new Location(x, y);
+    }
     public static Path toPath(Location l){
         return new Path(l.x, l.y);
     }

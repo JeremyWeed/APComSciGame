@@ -7,6 +7,7 @@ import Graphics.GraphicsDraw;
  */
 public class GameLogic implements Runnable {
     GraphicsDraw gd;
+    public static boolean itsNotOver = true;
     public GameLogic(GraphicsDraw gd){
         this.gd = gd;
     }
@@ -20,7 +21,9 @@ public class GameLogic implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }while(true);
+        }while(itsNotOver);
+        gd.endGame();
+        System.out.println("hello");
     }
 
     public void update(){
@@ -30,6 +33,10 @@ public class GameLogic implements Runnable {
         for(int i = 0; i < Entities.towers.size(); i ++){
             Entities.towers.get(i).attack();
         }
+
+    }
+
+    public static void EndGame(){
 
     }
 
