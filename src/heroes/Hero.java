@@ -32,7 +32,7 @@ public abstract class Hero extends Entity {
         this.health = health;
         this.speed = speed;
         this.armor = armor;
-        pathsNotTaken = Path.paths;
+        pathsNotTaken = (ArrayList<Path>) Path.paths.clone();
         try {
             image = ImageIO.read(new File(location));
         } catch (IOException e) {
@@ -75,8 +75,8 @@ public abstract class Hero extends Entity {
     }
 
     public void draw(Graphics2D g){
-        advance();
-        g.drawImage(image, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
+        if(location != null)
+            g.drawImage(image, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
     }
 
 

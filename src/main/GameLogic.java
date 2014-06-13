@@ -14,12 +14,23 @@ public class GameLogic implements Runnable {
     public void run(){
         do {
             gd.gameRender();
+            update();
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }while(true);
+    }
+
+    public void update(){
+        for(int i = 0; i < Entities.heroes.size(); i++){
+            Entities.heroes.get(i).advance();
+        }
+        for(int i = 0; i < Entities.towers.size(); i ++){
+            Entities.towers.get(i).attack();
+        }
+
     }
 
 

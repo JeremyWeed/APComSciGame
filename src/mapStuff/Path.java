@@ -33,6 +33,16 @@ public class Path {
         return e;
     }
 
+    public static boolean isOnPath(Location l){
+        Path p = Location.toPath(l);
+        for(int i = 0; i < Path.paths.size(); i++){
+            if(p.equals(Path.paths.get(i))){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Location toLocation(){
         return new Location(x,y);
     }

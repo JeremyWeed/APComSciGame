@@ -1,5 +1,9 @@
 package main;
 
+import heroes.BasicHero;
+import mapStuff.Map;
+import towers.BasicTower;
+
 import javax.swing.event.MouseInputListener;
 import java.awt.event.MouseEvent;
 
@@ -10,7 +14,13 @@ public class Control implements MouseInputListener {
 
     public void mouseEntered(MouseEvent e){}
     public void mouseExited(MouseEvent e){}
-    public void mouseClicked(MouseEvent e){}
+    public void mouseClicked(MouseEvent e){
+        if(e.getButton() == 1) {
+            BasicTower bt = new BasicTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+        }else{
+            BasicHero bh = new BasicHero(Map.get());
+        }
+    }
     public void mousePressed(MouseEvent e){}
     public void mouseReleased(MouseEvent e){}
     public void mouseMoved(MouseEvent e){}

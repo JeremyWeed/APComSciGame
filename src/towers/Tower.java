@@ -1,11 +1,13 @@
 package towers;
 
 import heroes.Hero;
+import main.Entities;
 import main.Entity;
 import main.Var;
 import mapStuff.Grid;
 import mapStuff.Location;
 import mapStuff.Map;
+import mapStuff.Path;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -25,7 +27,8 @@ public abstract class Tower extends Entity {
     int range;
     Map map;
     int step = 0;
-    Location location;
+    Location location, attackee;
+    boolean doSplash = false;
 
     public Tower(Map map, String tower, String bolt, double damage, double speed, int range, boolean isMagic){
         this.map = map;
@@ -43,8 +46,16 @@ public abstract class Tower extends Entity {
 
     public boolean add(int x, int y){
         location = new Location(x,y);
+        if(Path.isOnPath(location)){
+            return false;
+        }
         Grid grid = Grid.get();
-        return grid.add(location, this);
+        if(grid.add(location, this)){
+            Entities.towers.add(this);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public ArrayList<Location> findHeroes(int radius){
@@ -68,6 +79,7 @@ public abstract class Tower extends Entity {
         for (int i = 0; i < locations.size(); i++){
             if(!locations.get(i).e.isHero()){
                 locations.remove(i);
+                i--;
             }
         }
         return locations;
@@ -89,21 +101,25 @@ public abstract class Tower extends Entity {
     }
 
     public void attack(){
+        doSplash =  false;
         if(step > speed) {
-            Location l = findClosest(findHeroes(range));
-            if (l == null) {
+            attackee = findClosest(findHeroes(range));
+            if (attackee == null) {
                 return;
             } else {
-                Hero hero = (Hero) l.e;
+                Hero hero = (Hero) attackee.e;
                 hero.doDamage(damage, isMagic);
+                doSplash = true;
             }
         }else{
             step++;
+
         }
     }
      public void draw(Graphics2D g){
-         attack();
          g.drawImage(tower, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
+         if(doSplash)
+             g.drawImage(bolt, attackee.x * Var.GRID_SIZE, attackee.y * Var.GRID_SIZE, null);
      }
 
 }

@@ -38,11 +38,14 @@ public class GraphicsDraw{
     public void gameRender(){
         Graphics2D g = (Graphics2D) gf.bufferStrategy.getDrawGraphics();
         map.draw(g);
+        for(int i = 0; i < Entities.heroes.size(); i++){
+            Entities.heroes.get(i).draw(g);
+        }
         for(int i = 0; i < Entities.towers.size(); i++){
             Entities.towers.get(i).draw(g);
         }
-        for(int i = 0; i < Entities.heroes.size(); i++){
-            Entities.heroes.get(i).draw(g);
+        for(int i = 0; i < Entities.accessories.size(); i++){
+            Entities.accessories.get(i).draw(g);
         }
         g.dispose();
         gf.bufferStrategy.show();

@@ -28,7 +28,7 @@ public class MapReader {
         }
     }
 
-    public Map read() throws Exception{
+    public void read() throws Exception{
         PathCreator p;
         Background background = null;
         End end = null;
@@ -62,10 +62,9 @@ public class MapReader {
         if((background == null) || (end == null) || (size == null) || (start == null) || (accessories.size() == 0)){
             throw  new Exception();
         }
-        Map m = new Map(background, size, end, start, accessories);
-        p = new PathCreator(pathFile,m);
+        Map.create(background, size, end, start, accessories);
+        p = new PathCreator(pathFile,Map.get());
         p.read();
-        return m;
     }
 
     public ArrayList<String> parse(Path file){

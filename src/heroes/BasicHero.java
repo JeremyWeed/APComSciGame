@@ -1,5 +1,6 @@
 package heroes;
 
+import main.Entities;
 import main.Var;
 import mapStuff.Map;
 
@@ -15,6 +16,7 @@ public class BasicHero extends Hero{
 
     public BasicHero(Map map){
         super(map, "resources/Goat.png", 15, 10, 1);
+        Entities.heroes.add(this);
     }
 
 
