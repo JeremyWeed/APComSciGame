@@ -67,7 +67,7 @@ public abstract class Hero extends Entity {
              }
          }
          if(location.equals(End.location)){
-             GameLogic.itsNotOver = true;
+             GameLogic.itsNotOver = false;
          }
      }
 

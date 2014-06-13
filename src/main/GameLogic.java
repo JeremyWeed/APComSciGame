@@ -13,7 +13,7 @@ public class GameLogic implements Runnable {
     }
 
     public void run(){
-        do {
+        while(itsNotOver) {
             gd.gameRender();
             update();
             try {
@@ -21,9 +21,10 @@ public class GameLogic implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }while(itsNotOver);
+        }
+        gd.gameRender();
+        update();
         gd.endGame();
-        System.out.println("hello");
     }
 
     public void update(){

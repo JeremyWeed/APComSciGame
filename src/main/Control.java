@@ -5,12 +5,14 @@ import mapStuff.Map;
 import towers.BasicTower;
 
 import javax.swing.event.MouseInputListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 
 /**
  * Created by jeremy on 5/30/14.
  */
-public class Control implements MouseInputListener {
+public class Control implements MouseInputListener, KeyListener {
 
     public void mouseEntered(MouseEvent e){}
     public void mouseExited(MouseEvent e){}
@@ -25,4 +27,11 @@ public class Control implements MouseInputListener {
     public void mouseReleased(MouseEvent e){}
     public void mouseMoved(MouseEvent e){}
     public void mouseDragged(MouseEvent e){}
+    public void keyTyped(KeyEvent e){}
+    public void keyPressed(KeyEvent e){
+        if(e.getKeyChar() == 'q')
+            new BasicHero(Map.get());
+    }
+    public void keyReleased(KeyEvent e){
+    }
 }

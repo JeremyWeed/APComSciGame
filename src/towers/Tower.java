@@ -120,7 +120,6 @@ public abstract class Tower extends Entity {
     public void attack(){
 
         if(step > speed) {
-            step = 0;
             attackee = findClosest(findHeroes(range));
             if (attackee == null) {
                 return;
@@ -129,6 +128,7 @@ public abstract class Tower extends Entity {
                 hero.doDamage(damage, isMagic);
                 doSplash = true;
                 splashLocation = attackee.copy();
+                step = 0;
             }
         }else{
             step++;
@@ -138,6 +138,7 @@ public abstract class Tower extends Entity {
      public void draw(Graphics2D g){
          g.drawImage(tower, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
          if(doSplash) {
+             g.drawImage(flash, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
              splashStep++;
              g.drawImage(bolt, splashLocation.x * Var.GRID_SIZE, splashLocation.y * Var.GRID_SIZE, null);
              if(splashStep > 2) {

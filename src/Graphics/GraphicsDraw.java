@@ -54,7 +54,9 @@ public class GraphicsDraw{
 
     public void endGame(){
         Graphics2D g = (Graphics2D) gf.bufferStrategy.getDrawGraphics();
-        g.drawString("GAME OVER", map.size[0] * Var.GRID_SIZE/2, map.size[1] * Var.GRID_SIZE/2);
+        g.setColor(Color.RED);
+        g.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
+        g.drawString("GAME OVER", (map.size[0] * Var.GRID_SIZE/2) - 75, map.size[1] * Var.GRID_SIZE/2);
         g.dispose();
         gf.bufferStrategy.show();
     }

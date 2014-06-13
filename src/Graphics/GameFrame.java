@@ -23,6 +23,7 @@ public class GameFrame extends JFrame{
         canvas.setIgnoreRepaint(true);
         canvas.addMouseListener(new Control());
         canvas.addMouseMotionListener(new Control());
+        canvas.addKeyListener(new Control());
         JPanel panel = (JPanel) getContentPane();
         panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         panel.setLayout(null);

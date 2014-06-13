@@ -19,7 +19,6 @@ public class MapReader {
 
     public MapReader(String dirLocation)throws IOException{
         dir = Paths.get(dirLocation);
-        System.out.println(dirLocation);
         mapFile = "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".map";
         pathFile = dirLocation + "/" + dirLocation.split("/")[dirLocation.split("/").length - 1] + ".path";
         mapDir = Paths.get(dirLocation + mapFile);
