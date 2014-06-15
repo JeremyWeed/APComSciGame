@@ -14,7 +14,7 @@ import towers.BasicTower;
 public class Main {
     public static void main(String args[]){
         try {
-            MapReader r = new MapReader("resources/Map1");
+            MapReader r = new MapReader("resources/Map3");
             r.read();
 
         } catch (Exception e) {
