@@ -14,6 +14,6 @@ public class Katamari extends Hero
 	
 	public Katamari(Map map)
 	{
-		super(map, "resources/Katamari.png", 300, 6, 2);
+		super(map, "resources/Katamari.png", 300, 6, 2, 35);
 	}
 }

@@ -14,6 +14,6 @@ public class Goat extends Hero
 	
 	public Goat(Map map)
 	{
-		super(map, "resources/Goat.png", 150, 1, .75);
+		super(map, "resources/Goat.png", 150, 1, .75, 10);
 	}
 }
