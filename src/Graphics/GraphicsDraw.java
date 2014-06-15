@@ -48,6 +48,7 @@ public class GraphicsDraw{
         for(int i = 0; i < Entities.accessories.size(); i++){
             Entities.accessories.get(i).draw(g);
         }
+
         g.dispose();
         gf.bufferStrategy.show();
     }

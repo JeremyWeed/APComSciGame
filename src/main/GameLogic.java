@@ -7,9 +7,11 @@ import Graphics.GraphicsDraw;
  */
 public class GameLogic implements Runnable {
     GraphicsDraw gd;
+    static ActionBar towerBar, heroBar;
     public static boolean itsNotOver = true;
     public GameLogic(GraphicsDraw gd){
         this.gd = gd;
+
     }
 
     public void run(){
@@ -39,6 +41,11 @@ public class GameLogic implements Runnable {
 
     public static void EndGame(){
 
+    }
+
+    public void addInterface(){
+        towerBar = new ActionBar(gd, ActionItem.towers);
+        heroBar = new ActionBar(gd, ActionItem.heroes);
     }
 
 

@@ -23,9 +23,11 @@ public abstract class Hero extends Entity {
     BufferedImage image;
     ArrayList<Path> pathsNotTaken = new ArrayList<Path>();
     public double health, speed, armor;
+    public int price;
     int step = 0;
 
-    public Hero(Map map, String location, int health, int speed, int armor){
+    public Hero(Map map, String location, double health, double speed, double armor, int price){
+        this.price = price;
         this.map = map;
         this.health = health;
         this.speed = speed;
@@ -46,12 +48,12 @@ public abstract class Hero extends Entity {
     }
 
      public void advance() {
+
          if (location == null) {
              location = new Location(map.start[0], map.start[1]);
              grid.add(location, this);
          }else if(health <= 0) {
-              grid.remove(location);
-              Entities.heroes.remove(this);
+              remove();
          }else{
 
              if(step > speed) {
@@ -71,6 +73,11 @@ public abstract class Hero extends Entity {
              Var.GAME_END_STRING = "HEROES WIN";
          }
      }
+
+    public void remove(){
+        grid.remove(location);
+        Entities.heroes.remove(this);
+    }
 
 
     public boolean isHero(){

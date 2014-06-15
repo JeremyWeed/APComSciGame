@@ -1,11 +1,7 @@
 package main;
 
 import Graphics.GraphicsDraw;
-import main.Entities;
-import main.Entity;
-
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -17,14 +13,11 @@ public class ActionBar {
     int selected = 0;
     public ArrayList<ActionItem> items = new ArrayList<ActionItem>();
 
-    public ActionBar(GraphicsDraw gd){
+    public ActionBar(GraphicsDraw gd, ArrayList<ActionItem> items){
         this.gd = gd;
+        this.items = items;
         gd.extendFrame(35);
         y = gd.getY();
-    }
-
-    public void add(ActionItem a){
-        items.add(a);
     }
 
     public void draw(Graphics2D g){
