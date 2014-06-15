@@ -6,6 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by jeremy on 6/14/14.
@@ -38,9 +39,9 @@ public class ActionItem {
 
     public static ArrayList<ActionItem> towers = new ArrayList<ActionItem>(Arrays.asList(new ActionItem("resources/Dung Tower.png", "resources/Dung Splash.png", 10),
                                                                                          new ActionItem("resources/Boiling Water Tower.png", "resources/Water Splash.png", 10),
-                                                                                         new ActionItem("resources/Book Store.png", "resources/Book Store Splash.png", 10)
+                                                                                         new ActionItem("resources/Book Store.png", "resources/Book Store Splash.png", 10),
                                                                                          new ActionItem("resources/Navi.png", "resources/Navi Splash.png", 10)));
-    public static ArrayList<ActionItem> heroes = new ArrayList<ActionItem>(Arrays.asList(new ActionItem("resources/Katamari.png", "resources/Katamari.png", 35), 
+    public static ArrayList<ActionItem> heroes = new ArrayList<ActionItem>(Arrays.asList(new ActionItem("resources/Katamari.png", "resources/Katamari.png", 35),
                                                                                          new ActionItem("resources/Link.png", "resources/Link.png", 55), 
                                                                                          new ActionItem("resources/Wreck it Ralph.png", "resources/Wreck it Ralph.png", 10), 
                                                                                          new ActionItem("resources/Scrim.png", "resources/Scrim.png", 25),
