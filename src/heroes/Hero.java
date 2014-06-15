@@ -23,7 +23,7 @@ public abstract class Hero extends Entity {
     BufferedImage image;
     ArrayList<Path> pathsNotTaken = new ArrayList<Path>();
     public double health, speed, armor;
-    public static int price;
+    public static int price, energy;
     int step = 0;
 
     public Hero(Map map, String location, double health, double speed, double armor){
