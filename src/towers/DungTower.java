@@ -15,6 +15,6 @@ public class DungTower extends Tower
     }
     public void upgrade()
     {
-    	super.upgrade("resources/Tomato Tower.png", "resources/Tomato Splash.png", "resources/Tomato Tower Flash.png", 20,5,1,false);
+    	update("resources/Tomato Tower.png", "resources/Tomato Splash.png", "resources/Tomato Tower Flash.png", 20,5,1,false);
     }
 }

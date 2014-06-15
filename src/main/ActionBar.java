@@ -17,7 +17,7 @@ public class ActionBar {
         this.gd = gd;
         this.items = items;
         gd.extendFrame(35);
-        y = gd.getY();
+        y = gd.gf.getHeight();
     }
 
     public void draw(Graphics2D g){

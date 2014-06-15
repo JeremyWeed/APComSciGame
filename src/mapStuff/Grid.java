@@ -34,6 +34,8 @@ public class Grid {
     }
 
     public Location get(Location l){
+        if( l ==  null)
+            return null;
         for (int i = 0; i < locations.size(); i++) {
             if (locations.get(i).equals(l)) {
                 return locations.get(i);

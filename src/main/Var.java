@@ -10,6 +10,7 @@ public class Var {
     public static final int GAME_TICK = 100;
     public static String GAME_END_STRING = "IT BROKE YO";
     public static final String GAME_NAME = "Episode V: The Peasants Strike Back";
+    public static int selected = 0;
     public static int makeNormal(int x, boolean isX, Map map){
         if (x < 0)
             return 0;

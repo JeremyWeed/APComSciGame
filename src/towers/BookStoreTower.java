@@ -15,6 +15,6 @@ public class BookStoreTower extends Tower
     }
     public void upgrade()
     {
-    	super.upgrade("resources/Wizard Tower.png", "resources/Wizard Splash.png", "resources/Wizard Tower Flash.png", 30,10,1,true);
+    	update("resources/Wizard Tower.png", "resources/Wizard Splash.png", "resources/Wizard Tower Flash.png", 30,10,1,true);
     }
 }

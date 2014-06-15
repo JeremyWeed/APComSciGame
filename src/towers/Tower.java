@@ -46,9 +46,12 @@ public abstract class Tower extends Entity {
             e.printStackTrace();
         }
     }
+    public boolean isTower(){
+        return true;
+    }
+    public abstract void upgrade();
 
-
-    public void upgrade(String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic){
+    public void update(String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic){
         this.damage = damage;
         this.speed = speed;
         this.range = range;

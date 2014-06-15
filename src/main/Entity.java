@@ -34,4 +34,8 @@ public abstract class Entity {
     public boolean isHero(){
         return false;
     }
+
+    public boolean isTower(){
+        return false;
+    }
 }

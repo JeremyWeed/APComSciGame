@@ -2,12 +2,15 @@ package main;
 
 import Graphics.GraphicsDraw;
 
+import java.awt.*;
+
 /**
  * Created by jeremy on 5/22/14.
  */
 public class GameLogic implements Runnable {
     GraphicsDraw gd;
-    static ActionBar towerBar, heroBar;
+    public static int energy = 1000, money = 1000;
+    public static ActionBar towerBar, heroBar;
     public static boolean itsNotOver = true;
     public GameLogic(GraphicsDraw gd){
         this.gd = gd;
@@ -46,6 +49,15 @@ public class GameLogic implements Runnable {
     public void addInterface(){
         towerBar = new ActionBar(gd, ActionItem.towers);
         heroBar = new ActionBar(gd, ActionItem.heroes);
+    }
+
+    public static void draw(Graphics2D g){
+        towerBar.draw(g);
+        heroBar.draw(g);
+        g.setColor(Color.black);
+        g.drawString("MONEY: " + money, 0,10);
+        g.drawString("ENERGY: " + energy, 100,10);
+
     }
 
 

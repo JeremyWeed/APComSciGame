@@ -3,6 +3,7 @@ package main;
 import Graphics.GameFrame;
 import Graphics.GraphicsDraw;
 import heroes.BasicHero;
+import heroes.Katamari;
 import mapStuff.Map;
 import mapStuff.MapReader;
 import towers.BasicTower;
@@ -23,6 +24,8 @@ public class Main {
         GraphicsDraw gd = new GraphicsDraw(g, Map.get());
         GameLogic gl = new GameLogic(gd);
         gd.setupGame();
+        gl.addInterface();
+
         new Thread(gl).start();
 
     }

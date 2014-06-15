@@ -18,7 +18,7 @@ public class BoilingWaterTower extends Tower
     }
     public void upgrade()
     {
-    	super.upgrade("resources/Boiling Oil Tower.png", "resources/Oil Splash.png", "resources/Boiling Oil Tower Flash.png", 20,10,2,false);
+    	update("resources/Boiling Oil Tower.png", "resources/Oil Splash.png", "resources/Boiling Oil Tower Flash.png", 20,10,2,false);
     }
 
 }

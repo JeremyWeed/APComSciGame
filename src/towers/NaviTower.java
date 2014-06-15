@@ -13,4 +13,8 @@ public class NaviTower extends Tower
         super(map,"resources/Navi.png", "resources/Navi Splash.png", "resources/Navi Flash.png", 100000000,1,1,true);
         add(x,y);
     }
+
+    public void upgrade(){
+        //no upgrade
+    }
 }

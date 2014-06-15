@@ -4,6 +4,7 @@ package Graphics;
 
 import heroes.Hero;
 import main.Entities;
+import main.GameLogic;
 import main.Var;
 import mapStuff.Map;
 import towers.Tower;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
  * Created by jeremy on 5/21/14.
  */
 public class GraphicsDraw{
-    GameFrame gf;
+    public GameFrame gf;
     public Map map;
     public GraphicsDraw(GameFrame gf, Map map){
         this.gf = gf;
@@ -48,7 +49,7 @@ public class GraphicsDraw{
         for(int i = 0; i < Entities.accessories.size(); i++){
             Entities.accessories.get(i).draw(g);
         }
-
+        GameLogic.draw(g);
         g.dispose();
         gf.bufferStrategy.show();
     }
@@ -57,19 +58,19 @@ public class GraphicsDraw{
         Graphics2D g = (Graphics2D) gf.bufferStrategy.getDrawGraphics();
         g.setColor(Color.RED);
         g.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
-        g.drawString(Var.GAME_END_STRING, (map.size[0] * Var.GRID_SIZE/2) - 75, map.size[1] * Var.GRID_SIZE/2);
+        g.drawString(Var.GAME_END_STRING, (map.size[0] * Var.GRID_SIZE / 2) - 75, map.size[1] * Var.GRID_SIZE / 2);
         g.dispose();
         gf.bufferStrategy.show();
     }
 
     public void setupGame(){
-        gf.setSize(map.getPX(),map.getPY() + 28);
+        gf.setSize(map.getPX(),map.getPY());
         gf.canvas.setSize(map.getPX(), map.getPY());
     }
 
     public void extendFrame(int y){
-        gf.setSize(map.getPX(), map.getPY() + 28 + y);
-        gf.canvas.setSize(map.getPX(), map.getPY() + y);
+        gf.setSize(map.getPX(), gf.getHeight()  + y);
+        gf.canvas.setSize(map.getPX(), gf.getHeight() + y);
     }
 
     public int getY(){

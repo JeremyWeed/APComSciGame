@@ -13,9 +13,9 @@ public class BasicHero extends Hero{
     public String getName(){
         return "basic";
     }
-
+    public static int price = 1;
     public BasicHero(Map map){
-        super(map, "resources/Goat.png", 10, 1, 1);
+        super(map, "resources/Goat.png", 10, 1, 11);
         Entities.heroes.add(this);
     }
 
