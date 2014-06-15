@@ -4,6 +4,7 @@ package Graphics;
  * Created by jeremy on 5/20/14.
  */
 import main.Control;
+import main.Var;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,7 +29,7 @@ public class GameFrame extends JFrame{
         panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         panel.setLayout(null);
         panel.add(canvas);
-        setTitle("***DEV NAME*** Peasants vs Heroes ***DEV NAME***");
+        setTitle(Var.GAME_NAME);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WIDTH,HEIGHT);
         setLocationRelativeTo(null);

@@ -29,7 +29,7 @@ public class Control implements MouseInputListener, KeyListener {
     public void mouseDragged(MouseEvent e){}
     public void keyTyped(KeyEvent e){}
     public void keyPressed(KeyEvent e){
-        if(e.getKeyChar() == 'q')
+        if(e.getKeyChar() == '1')
             new BasicHero(Map.get());
     }
     public void keyReleased(KeyEvent e){

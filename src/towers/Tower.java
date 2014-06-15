@@ -47,6 +47,7 @@ public abstract class Tower extends Entity {
         }
     }
 
+
     public void upgrade(String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic){
         this.damage = damage;
         this.speed = speed;
