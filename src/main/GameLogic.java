@@ -11,7 +11,9 @@ import java.awt.*;
  */
 public class GameLogic implements Runnable {
     GraphicsDraw gd;
-    public static int energy = 1000, money = 1000;
+    public static int maxEnergy = Var.STARTING_ENERGY;
+    public static double percent;
+    public static int energy = maxEnergy, money = 1000, round = 1;
     public static ActionBar towerBar, heroBar;
     public static boolean itsNotOver = true;
     public GameLogic(GraphicsDraw gd){
@@ -59,7 +61,25 @@ public class GameLogic implements Runnable {
         g.setColor(Color.RED);
         g.drawString("MONEY: " + money, 0,10);
         g.drawString("ENERGY: " + energy, 100,10);
+        g.drawString("ROUND " + round, 200,10);
+    }
 
+    public static void updateEnergy(double completed){
+        percent = (completed >  percent) ? completed : percent;
+        if (energy < Var.LOWEST_PRICE){
+            newRound();
+            round++;
+            if(round >= Var.MAX_ROUNDS){
+                Var.GAME_END_STRING = "PEASANTS WIN";
+                itsNotOver = false;
+            }
+
+        }
+    }
+
+    public static void newRound(){
+        maxEnergy += (Var.ENERGY_PER_LEVEL * percent);
+        energy = maxEnergy;
     }
 
 

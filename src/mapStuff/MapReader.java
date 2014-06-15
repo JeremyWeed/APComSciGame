@@ -41,6 +41,8 @@ public class MapReader {
 
                 background = new Background(dir + "/" + setup.get(i).split("=")[1]);
 
+            }else if (setup.get(i).contains("size")){
+                size = parseLoc(setup.get(i).split("=")[1])[0];
             }else if (setup.get(i).contains("acc")){
 
                 String file = dir + "/" + setup.get(i).split("=")[1].split(";")[0];
@@ -54,8 +56,6 @@ public class MapReader {
 
             }else if (setup.get(i).contains("start")){
                 start = parseLoc(setup.get(i).split("=")[1])[0];
-            }else if (setup.get(i).contains("size")){
-                size = parseLoc(setup.get(i).split("=")[1])[0];
             }
         }
         if((background == null) || (end == null) || (size == null) || (start == null) || (accessories.size() == 0)){

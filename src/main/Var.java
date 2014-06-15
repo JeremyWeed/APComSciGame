@@ -8,6 +8,10 @@ import mapStuff.Map;
 public class Var {
     public static final int GRID_SIZE = 35;
     public static final int GAME_TICK = 100;
+    public static final int LOWEST_PRICE = 1;
+    public static final int ENERGY_PER_LEVEL = 50;
+    public static final int STARTING_ENERGY = 1;
+    public static final int MAX_ROUNDS = 10;
     public static String GAME_END_STRING = "IT BROKE YO";
     public static final String GAME_NAME = "Episode V: The Peasants Strike Back";
     public static int selected = 0;

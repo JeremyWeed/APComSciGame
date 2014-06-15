@@ -20,12 +20,13 @@ public class Start {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        Music music = new Music();
         GameFrame g = new GameFrame();
         GraphicsDraw gd = new GraphicsDraw(g, Map.get());
         GameLogic gl = new GameLogic(gd);
         gd.setupGame();
         gl.addInterface();
-
+        music.startMusic();
         new Thread(gl).start();
 
     }

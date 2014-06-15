@@ -68,6 +68,8 @@ public abstract class Tower extends Entity {
     }
 
     public boolean add(int x, int y){
+        if(x > Map.get().size[0] || y > Map.get().size[1])
+            return false;
         location = new Location(x,y);
         if(Path.isOnPath(location)){
             return false;

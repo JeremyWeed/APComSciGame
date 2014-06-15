@@ -51,7 +51,7 @@ public abstract class Hero extends Entity {
              location = new Location(map.start[0], map.start[1]);
              grid.add(location, this);
          }else if(health <= 0) {
-              remove();
+              kill();
          }else{
 
              if(step > speed) {
@@ -73,9 +73,10 @@ public abstract class Hero extends Entity {
          }
      }
 
-    public void remove(){
+    public void kill(){
         grid.remove(location);
         Entities.heroes.remove(this);
+        GameLogic.updateEnergy(1.0 - (double)pathsNotTaken.size() / (double)Path.paths.size() );
     }
 
 
