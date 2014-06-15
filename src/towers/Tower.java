@@ -31,7 +31,7 @@ public abstract class Tower extends Entity {
     boolean doSplash = false;
     int splashStep = 0;
     public static int price = 0;
-    Location splashLocation;
+    ArrayList<Location> splashLocations = new ArrayList<Location>();
 
     public Tower(Map map, String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic, int price){
         Tower.price = price;
@@ -135,7 +135,7 @@ public abstract class Tower extends Entity {
                 Hero hero = (Hero) attackee.e;
                 hero.doDamage(damage, isMagic);
                 doSplash = true;
-                splashLocation = attackee.copy();
+                splashLocations.add(attackee.copy());
                 step = 0;
             }
         }else{
@@ -148,9 +148,11 @@ public abstract class Tower extends Entity {
          if(doSplash) {
              g.drawImage(flash, location.x * Var.GRID_SIZE, location.y * Var.GRID_SIZE, null);
              splashStep++;
-             g.drawImage(bolt, splashLocation.x * Var.GRID_SIZE, splashLocation.y * Var.GRID_SIZE, null);
+             for(int i = 0; i < splashLocations.size(); i++)
+             g.drawImage(bolt, splashLocations.get(i).x * Var.GRID_SIZE, splashLocations.get(i).y * Var.GRID_SIZE, null);
              if(splashStep > 2) {
                  splashStep = 0;
+                 splashLocations = new ArrayList<Location>();
                  doSplash = false;
              }
          }
