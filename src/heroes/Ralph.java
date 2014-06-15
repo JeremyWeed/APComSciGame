@@ -14,6 +14,6 @@ public class Ralph extends Hero
 	
 	public Ralph(Map map)
 	{
-		super(map, "resources/Wreck it Ralph.png", 200, 3, 1);
+		super(map, "resources/Wreck it Ralph.png", 200, 3, 1, 10);
 	}
 }
