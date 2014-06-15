@@ -1,8 +1,10 @@
 package main;
 
 import Graphics.GraphicsDraw;
+import mapStuff.Map;
 
 import java.awt.*;
+
 
 /**
  * Created by jeremy on 5/22/14.
@@ -47,8 +49,8 @@ public class GameLogic implements Runnable {
     }
 
     public void addInterface(){
-        towerBar = new ActionBar(gd, ActionItem.towers);
-        heroBar = new ActionBar(gd, ActionItem.heroes);
+        towerBar = new ActionBar(gd, ActionItem.towers, Map.get().size[0] * 35);
+        heroBar = new ActionBar(gd, ActionItem.heroes, Map.get().size[0] * 35 + 35);
     }
 
     public static void draw(Graphics2D g){

@@ -23,7 +23,7 @@ public class MenuFrame extends JFrame{
         panel.setLayout(null);
         panel.add(canvas);
         setTitle("Episode V: The Peasants Strike Back");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(WIDTH,HEIGHT);
         setLocationRelativeTo(null);
         pack();

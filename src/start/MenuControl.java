@@ -18,14 +18,17 @@ public class MenuControl implements MouseInputListener{
         if((e.getX() > 20 && e.getX() < 178) && (e.getY() > 530 && e.getY() < 565))
         {
             Start.main("resources/Map1");
+            Main.loop = false;
         }
         else if((e.getX() > 182 && e.getX() < 328) && (e.getY() > 530 && e.getY() < 565))
         {
             Start.main("resources/Map2");
+            Main.loop = false;
         }
         else if((e.getX() > 332 && e.getX() < 500) && (e.getY() > 530 && e.getY() < 565))
         {
             Start.main("resources/Map3");
+            Main.loop = false;
         }
 
     }

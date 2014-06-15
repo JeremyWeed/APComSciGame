@@ -18,7 +18,6 @@ public class MenuDraw {
     	try {
 			img = ImageIO.read(new File(loc));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         this.gf = gf;

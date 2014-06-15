@@ -28,13 +28,13 @@ public class ActionItem {
     public void draw(Graphics2D g, int x, int y){
         g.drawImage(image, x, y, null);
         g.setColor(Color.BLACK);
-        g.drawString(Integer.toString(price), x, y + 20);
+        g.drawString(Integer.toString(price), x+10, y + 10);
     }
 
     public void drawSelected(Graphics2D g, int x, int y){
         g.drawImage(shift, x, y, null);
         g.setColor(Color.BLACK);
-        g.drawString(Integer.toString(price), x, y + 20);
+        g.drawString(Integer.toString(price), x + 10, y + 10);
     }
 
     public static ArrayList<ActionItem> towers = new ArrayList<ActionItem>(Arrays.asList(new ActionItem("resources/Dung Tower.png", "resources/Dung Tower Flash.png", 10),

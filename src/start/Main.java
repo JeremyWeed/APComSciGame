@@ -4,15 +4,24 @@ package start;
 /**
  * Created by jeremy on 5/20/14.
  */
-public class Main {
+public class Main implements Runnable{
+    public static boolean loop = true;
+    static MenuFrame g;
+    static MenuDraw gd;
     public static void main(String args[]){
         
-        MenuFrame g = new MenuFrame();
-        MenuDraw gd = new MenuDraw(g, "resources/Start Screen.png");
+        g = new MenuFrame();
+        gd = new MenuDraw(g, "resources/Start Screen.png");
         gd.basicRender();
-        while(true)
+        new Thread(new Main()).start();
+
+    }
+
+    public void run(){
+        while(loop)
         {
-        	gd.update();
+            gd.update();
         }
+        g.dispose();
     }
 }

@@ -13,19 +13,18 @@ public class ActionBar {
     int selected = 0;
     public ArrayList<ActionItem> items = new ArrayList<ActionItem>();
 
-    public ActionBar(GraphicsDraw gd, ArrayList<ActionItem> items){
+    public ActionBar(GraphicsDraw gd, ArrayList<ActionItem> items, int y){
         this.gd = gd;
         this.items = items;
-        gd.extendFrame(35);
-        y = gd.gf.getHeight();
+        this.y = y;
     }
 
     public void draw(Graphics2D g){
         for(int i = 0; i < items.size(); i ++){
             if(i == selected){
-                items.get(i).drawSelected(g, i * Var.GRID_SIZE, y - 35);
+                items.get(i).drawSelected(g, i * Var.GRID_SIZE, y);
             }else{
-                items.get(i).draw(g, i * Var.GRID_SIZE, y - 35);
+                items.get(i).draw(g, i * Var.GRID_SIZE, y);
             }
         }
     }
