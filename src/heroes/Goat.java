@@ -16,7 +16,7 @@ public class Goat extends Hero
 	
 	public Goat(Map map)
 	{
-		super(map, "resources/Goat.png", 200, 1, .5, 10, 5);
+		super(map, "resources/Goat.png", 125, 1, .5, 10, 5);
         	Entities.heroes.add(this);
 	}
 }
