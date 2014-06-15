@@ -14,6 +14,6 @@ public class Link extends Hero
 	
 	public Link(Map map)
 	{
-		super(map, "resources/Link.png", 1000000, 2, 1);
+		super(map, "resources/Link.png", 1000000, 2, 1, 55);
 	}
 }
