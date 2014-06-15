@@ -16,7 +16,7 @@ public class Scrim extends Hero
 	
 	public Scrim(Map map)
 	{
-		super(map, "resources/Scrim.png", 75, 2, 4);
+		super(map, "resources/Scrim.png", 300, 4, 2, 25, 20);
         Entities.heroes.add(this);
 	}
 }
