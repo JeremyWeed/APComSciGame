@@ -27,7 +27,7 @@ public class ActionItem {
 
     public void draw(Graphics2D g, int x, int y){
         g.drawImage(image, x, y, null);
-        g.setColor(Color.MAGENTA);
+        g.setColor(Color.BLACK);
         g.drawString(Integer.toString(price), x, y + 20);
     }
 

@@ -11,10 +11,10 @@ import towers.BasicTower;
 /**
  * Created by jeremy on 5/20/14.
  */
-public class Main {
-    public static void main(String args[]){
+public class Start {
+    public static void main(String s){
         try {
-            MapReader r = new MapReader("resources/Map3");
+            MapReader r = new MapReader(s);
             r.read();
 
         } catch (Exception e) {

@@ -54,7 +54,7 @@ public class GameLogic implements Runnable {
     public static void draw(Graphics2D g){
         towerBar.draw(g);
         heroBar.draw(g);
-        g.setColor(Color.black);
+        g.setColor(Color.RED);
         g.drawString("MONEY: " + money, 0,10);
         g.drawString("ENERGY: " + energy, 100,10);
 

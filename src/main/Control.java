@@ -23,21 +23,36 @@ public class Control implements MouseInputListener, KeyListener {
             Location l = new Location(e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
             if(Grid.get().get(l) != null && Grid.get().get(l).e.isTower()){
                 Tower t = (Tower) Grid.get().get(l).e;
-                t.upgrade();
+                if(!(GameLogic.money - t.price <= 0)){
+                    t.upgrade();
+                    GameLogic.money -= t.price;
+                }
             }else{
                 switch(Var.selected){
 
                     case 0:
-                        new DungTower(Map.get(),e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        if(!(GameLogic.money - DungTower.price <= 0)) {
+                            GameLogic.money -= DungTower.price;
+                            new DungTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        }
                         break;
                     case 1:
-                        new BoilingWaterTower(Map.get(),e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        if(!(GameLogic.money - BoilingWaterTower.price <= 0)) {
+                            GameLogic.money -= BoilingWaterTower.price;
+                            new BoilingWaterTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        }
                         break;
                     case 2:
-                        new BookStoreTower(Map.get(),e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        if(!(GameLogic.money - BookStoreTower.price <= 0)) {
+                            GameLogic.money -= BookStoreTower.price;
+                            new BookStoreTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        }
                         break;
                     case 3:
-                        new NaviTower(Map.get(),e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        if(!(GameLogic.money - NaviTower.price <= 0)) {
+                            GameLogic.money -= NaviTower.price;
+                            new NaviTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        }
                         break;
 
                 }

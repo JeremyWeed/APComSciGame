@@ -10,7 +10,7 @@ public class BookStoreTower extends Tower
 	}
     public BookStoreTower(Map map,int x, int y)
     {
-        super(map,"resources/Book Store.png", "resources/Book Store Splash.png", "resources/Book Store Flash.png", 20,10,1,true);
+        super(map,"resources/Book Store.png", "resources/Book Store Splash.png", "resources/Book Store Flash.png", 20,10,1,true,10);
         add(x,y);
     }
     public void upgrade()

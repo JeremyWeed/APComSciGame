@@ -1,9 +1,8 @@
+package start;
 
 import java.awt.*;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -11,11 +10,11 @@ import java.io.IOException;
 /**
  * Created by jeremy on 5/21/14.
  */
-public class GraphicsDraw{
-    GameFrame gf;
+public class MenuDraw {
+    MenuFrame gf;
     BufferedImage img;
     static int color = 0;
-    public GraphicsDraw(GameFrame gf, String loc){
+    public MenuDraw(MenuFrame gf, String loc){
     	try {
 			img = ImageIO.read(new File(loc));
 		} catch (IOException e) {

@@ -47,7 +47,6 @@ public abstract class Hero extends Entity {
     }
 
      public void advance() {
-
          if (location == null) {
              location = new Location(map.start[0], map.start[1]);
              grid.add(location, this);
@@ -58,8 +57,9 @@ public abstract class Hero extends Entity {
              if(step > speed) {
                  step = 0;
                  Location l = Path.findNext(Location.toPath(location), pathsNotTaken).toLocation();
-                 if (grid.add(l, this)) {
+                 if (grid.add(l, this)){
                      grid.remove(location);
+                     Path.remove(location,pathsNotTaken);
                      location = l;
                  }
 

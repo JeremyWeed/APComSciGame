@@ -30,9 +30,11 @@ public abstract class Tower extends Entity {
     Location location, attackee;
     boolean doSplash = false;
     int splashStep = 0;
+    public static int price = 0;
     Location splashLocation;
 
-    public Tower(Map map, String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic){
+    public Tower(Map map, String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic, int price){
+        Tower.price = price;
         this.map = map;
         this.damage = damage;
         this.speed = speed;

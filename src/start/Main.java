@@ -1,4 +1,4 @@
-
+package start;
 
 
 /**
@@ -6,9 +6,9 @@
  */
 public class Main {
     public static void main(String args[]){
-
-        GameFrame g = new GameFrame();
-        GraphicsDraw gd = new GraphicsDraw(g, "Start Screen.png");
+        
+        MenuFrame g = new MenuFrame();
+        MenuDraw gd = new MenuDraw(g, "resources/Start Screen.png");
         gd.basicRender();
         while(true)
         {

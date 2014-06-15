@@ -13,7 +13,7 @@ public class BoilingWaterTower extends Tower
 
     public BoilingWaterTower(Map map,int x, int y)
     {
-        super(map,"resources/Boiling Water Tower.png", "resources/Water Splash.png", "resources/Boiling Water Tower Flash.png", 20,10,1,false);
+        super(map,"resources/Boiling Water Tower.png", "resources/Water Splash.png", "resources/Boiling Water Tower Flash.png", 20,10,1,false,5);
         add(x,y);
     }
     public void upgrade()
