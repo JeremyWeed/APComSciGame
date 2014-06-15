@@ -14,6 +14,6 @@ public class StandardUnit extends Hero
 	
 	public StandardUnit(Map map)
 	{
-		super(map, "resources/StandardUnit.png", 50, 3, 1);
+		super(map, "resources/StandardUnit.png", 50, 3, 1, 1);
 	}
 }
