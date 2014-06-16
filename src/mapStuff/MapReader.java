@@ -2,6 +2,7 @@ package mapStuff;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.Files;
@@ -69,7 +70,7 @@ public class MapReader {
     public ArrayList<String> parse(Path file){
         ArrayList<String> s = new ArrayList<String>();
         try{
-            BufferedReader reader = Files.newBufferedReader(file);
+            BufferedReader reader = Files.newBufferedReader(file, Charset.defaultCharset());
             String line;
             while((line = reader.readLine()) != null){
                 s.add(line);
