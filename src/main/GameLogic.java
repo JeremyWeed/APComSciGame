@@ -13,7 +13,7 @@ public class GameLogic implements Runnable {
     GraphicsDraw gd;
     public static int maxEnergy = Var.STARTING_ENERGY;
     public static double percent;
-    public static int energy = maxEnergy, money = 1000, round = 1;
+    public static int energy = maxEnergy, money =Var.STARTING_MONEY, round = 1;
     public static ActionBar towerBar, heroBar;
     public static boolean itsNotOver = true;
     public GameLogic(GraphicsDraw gd){
@@ -51,8 +51,8 @@ public class GameLogic implements Runnable {
     }
 
     public void addInterface(){
-        towerBar = new ActionBar(gd, ActionItem.towers, Map.get().size[0] * 35);
-        heroBar = new ActionBar(gd, ActionItem.heroes, Map.get().size[0] * 35 + 35);
+        towerBar = new ActionBar(gd, ActionItem.towers, Map.get().size[1] * 35);
+        heroBar = new ActionBar(gd, ActionItem.heroes, Map.get().size[1] * 35 + 35);
     }
 
     public static void draw(Graphics2D g){
@@ -66,7 +66,7 @@ public class GameLogic implements Runnable {
 
     public static void updateEnergy(double completed){
         percent = (completed >  percent) ? completed : percent;
-        if (energy < Var.LOWEST_PRICE){
+        if (energy < Var.LOWEST_PRICE && Entities.heroes.size() == 0){
             newRound();
             round++;
             if(round >= Var.MAX_ROUNDS){

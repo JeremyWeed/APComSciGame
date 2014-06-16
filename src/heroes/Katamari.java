@@ -1,6 +1,7 @@
 package heroes;
 
 import main.Entities;
+import main.GameLogic;
 import main.Var;
 import mapStuff.Map;
 
@@ -16,7 +17,8 @@ public class Katamari extends Hero
 	
 	public Katamari(Map map)
 	{
-		super(map, "resources/Katamari.png", 500, 5, 1.5, 35, 30);
+		super(map, "resources/Katamari.png", 500, 10, 1.5,30);
         Entities.heroes.add(this);
+        GameLogic.energy -= price;
 	}
 }

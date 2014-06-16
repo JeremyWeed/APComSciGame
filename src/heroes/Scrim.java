@@ -1,6 +1,7 @@
 package heroes;
 
 import main.Entities;
+import main.GameLogic;
 import main.Var;
 import mapStuff.Map;
 
@@ -16,7 +17,9 @@ public class Scrim extends Hero
 	
 	public Scrim(Map map)
 	{
-		super(map, "resources/Scrim.png", 300, 4, 2, 25, 20);
+		super(map, "resources/Scrim.png", 300, 8, 2,20);
         Entities.heroes.add(this);
+        GameLogic.energy -= price;
+
 	}
 }

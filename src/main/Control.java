@@ -31,26 +31,22 @@ public class Control implements MouseInputListener, KeyListener {
                 switch(Var.selected){
 
                     case 0:
-                        if(!(GameLogic.money - DungTower.price < 0)) {
-                            GameLogic.money -= DungTower.price;
+                        if(!(GameLogic.money - DungTower.priceS < 0)) {
                             new DungTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
                         }
                         break;
                     case 1:
-                        if(!(GameLogic.money - BoilingWaterTower.price < 0)) {
-                            GameLogic.money -= BoilingWaterTower.price;
-                            new BoilingWaterTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
-                        }
-                        break;
-                    case 2:
-                        if(!(GameLogic.money - BookStoreTower.price < 0)) {
-                            GameLogic.money -= BookStoreTower.price;
+                        if(!(GameLogic.money - BookStoreTower.priceS < 0)) {
                             new BookStoreTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
                         }
                         break;
+                    case 2:
+                        if(!(GameLogic.money - BoilingWaterTower.priceS < 0)) {
+                            new BoilingWaterTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
+                        }
+                        break;
                     case 3:
-                        if(!(GameLogic.money - NaviTower.price < 0)) {
-                            GameLogic.money -= NaviTower.price;
+                        if(!(GameLogic.money - NaviTower.priceS < 0)) {
                             new NaviTower(Map.get(), e.getX() / Var.GRID_SIZE, e.getY() / Var.GRID_SIZE);
                         }
                         break;
@@ -67,39 +63,33 @@ public class Control implements MouseInputListener, KeyListener {
     public void keyPressed(KeyEvent e){
         switch(e.getKeyChar()){
             case '1':
-                if(!(GameLogic.energy - Katamari.price < 0)){
-                    new Katamari(Map.get());
-                    GameLogic.energy -= Katamari.price;
+                if(!(GameLogic.energy - StandardUnit.price < 0)){
+                    new StandardUnit(Map.get());
                 }
                 break;
             case '2':
-                if(!(GameLogic.energy - Link.price < 0)){
-                    new Link(Map.get());
-                    GameLogic.energy -= Link.price;
+                if(!(GameLogic.energy - Goat.price < 0)){
+                    new Goat(Map.get());
                 }
                 break;
             case '3':
                 if(!(GameLogic.energy - Ralph.price < 0)){
                     new Ralph(Map.get());
-                    GameLogic.energy -= Ralph.price;
                 }
                 break;
             case '4':
                 if(!(GameLogic.energy - Scrim.price < 0)){
                     new Scrim(Map.get());
-                    GameLogic.energy -= Scrim.price;
                 }
                 break;
             case '5':
-                if(!(GameLogic.energy - StandardUnit.price < 0)){
-                    new StandardUnit(Map.get());
-                    GameLogic.energy -= StandardUnit.price;
+                if(!(GameLogic.energy - Katamari.price < 0)){
+                    new Katamari(Map.get());
                 }
                 break;
             case '6':
-                if(!(GameLogic.energy - Goat.price < 0)){
-                    new Goat(Map.get());
-                    GameLogic.energy -= Goat.price;
+                if(!(GameLogic.energy - Link.price < 0)){
+                    new Link(Map.get());
                 }
                 break;
             case 'u':

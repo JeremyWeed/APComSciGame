@@ -14,6 +14,7 @@ public class GameFrame extends JFrame{
 
     BufferStrategy bufferStrategy;
     Canvas canvas;
+    JPanel panel;
 
     final int WIDTH = 10;
     final int HEIGHT = 10;
@@ -25,7 +26,7 @@ public class GameFrame extends JFrame{
         canvas.addMouseListener(new Control());
         canvas.addMouseMotionListener(new Control());
         canvas.addKeyListener(new Control());
-        JPanel panel = (JPanel) getContentPane();
+        panel = (JPanel) getContentPane();
         panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
         panel.setLayout(null);
         panel.add(canvas);
@@ -33,7 +34,6 @@ public class GameFrame extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WIDTH,HEIGHT);
         setLocationRelativeTo(null);
-        pack();
         setVisible(true);
         setResizable(false);
         canvas.createBufferStrategy(2);

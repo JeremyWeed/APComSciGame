@@ -23,14 +23,16 @@ public abstract class Hero extends Entity {
     BufferedImage image;
     ArrayList<Path> pathsNotTaken = new ArrayList<Path>();
     public double health, speed, armor;
-    public static int price, energy;
+    public static int price;
+    int dropMoney;
     int step = 0;
 
-    public Hero(Map map, String location, double health, double speed, double armor){
+    public Hero(Map map, String location, double health, double speed, double armor, int dropMoney){
         this.map = map;
         this.health = health;
         this.speed = speed;
         this.armor = armor;
+        this.dropMoney = dropMoney;
         pathsNotTaken = (ArrayList<Path>) Path.paths.clone();
         try {
             image = ImageIO.read(new File(location));
@@ -77,6 +79,7 @@ public abstract class Hero extends Entity {
         grid.remove(location);
         Entities.heroes.remove(this);
         GameLogic.updateEnergy(1.0 - (double)pathsNotTaken.size() / (double)Path.paths.size() );
+        GameLogic.money += dropMoney;
     }
 
 

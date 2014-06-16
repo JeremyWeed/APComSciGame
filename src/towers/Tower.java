@@ -3,6 +3,7 @@ package towers;
 import heroes.Hero;
 import main.Entities;
 import main.Entity;
+import main.GameLogic;
 import main.Var;
 import mapStuff.Grid;
 import mapStuff.Location;
@@ -30,11 +31,11 @@ public abstract class Tower extends Entity {
     Location location, attackee;
     boolean doSplash = false;
     int splashStep = 0;
-    public static int price = 0;
+    public int price = 0;
     ArrayList<Location> splashLocations = new ArrayList<Location>();
 
     public Tower(Map map, String tower, String bolt, String flash, double damage, double speed, int range, boolean isMagic, int price){
-        Tower.price = price;
+        this.price = price;
         this.map = map;
         this.damage = damage;
         this.speed = speed;
@@ -77,6 +78,7 @@ public abstract class Tower extends Entity {
         Grid grid = Grid.get();
         if(grid.add(location, this)){
             Entities.towers.add(this);
+            GameLogic.money -= price;
             return true;
         }else{
             return false;

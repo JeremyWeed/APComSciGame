@@ -64,8 +64,9 @@ public class GraphicsDraw{
     }
 
     public void setupGame(){
-        gf.setSize(map.getPX(),map.getPY() + 70);
-        gf.canvas.setSize(map.getPX(), map.getPY() + 70);
+        gf.panel.setPreferredSize(new Dimension(map.getPX(), map.getPY() + 98));
+        gf.canvas.setSize(map.getPX(), map.getPY() + 98);
+        gf.setSize(map.getPX(),map.getPY() + 98);
     }
 
     public void extendFrame(int y){

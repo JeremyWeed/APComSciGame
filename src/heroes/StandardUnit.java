@@ -1,6 +1,7 @@
 package heroes;
 
 import main.Entities;
+import main.GameLogic;
 import main.Var;
 import mapStuff.Map;
 
@@ -16,7 +17,8 @@ public class StandardUnit extends Hero
 	
 	public StandardUnit(Map map)
 	{
-		super(map, "resources/Standard Unit.png", 75, 3, 1, 1, 3);
+		super(map, "resources/Standard Unit.png", 75, 6, 1, 3);
         Entities.heroes.add(this);
+        GameLogic.energy -= price;
 	}
 }

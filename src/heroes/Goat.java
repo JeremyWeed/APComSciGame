@@ -1,6 +1,7 @@
 package heroes;
 
 import main.Entities;
+import main.GameLogic;
 import main.Var;
 import mapStuff.Map;
 
@@ -16,7 +17,8 @@ public class Goat extends Hero
 	
 	public Goat(Map map)
 	{
-		super(map, "resources/Goat.png", 125, 1, .5, 10, 5);
+		super(map, "resources/Goat.png", 125, 2, .5,5);
         	Entities.heroes.add(this);
+        GameLogic.energy -= price;
 	}
 }

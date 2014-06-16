@@ -37,16 +37,23 @@ public class ActionItem {
         g.drawString(Integer.toString(price), x + 10, y + 10);
     }
 
-    public static ArrayList<ActionItem> towers = new ArrayList<ActionItem>(Arrays.asList(new ActionItem("resources/Dung Tower.png", "resources/Dung Tower Flash.png", 10),
-                                                                                         new ActionItem("resources/Boiling Water Tower.png", "resources/Boiling Water Tower Flash.png", 10),
-                                                                                         new ActionItem("resources/Book Store.png", "resources/Book Store Flash.png", 10),
-                                                                                         new ActionItem("resources/Navi.png", "resources/Navi Flash.png", 10)));
-    public static ArrayList<ActionItem> heroes = new ArrayList<ActionItem>(Arrays.asList(new ActionItem("resources/Katamari.png", "resources/Katamari.png", 35),
-                                                                                         new ActionItem("resources/Link.png", "resources/Link.png", 55), 
-                                                                                         new ActionItem("resources/Wreck it Ralph.png", "resources/Wreck it Ralph.png", 10), 
-                                                                                         new ActionItem("resources/Scrim.png", "resources/Scrim.png", 25),
-                                                                                         new ActionItem("resources/Standard Unit.png", "resources/Standard Unit.png", 1),
-                                                                                         new ActionItem("resources/Goat.png", "resources/Goat.png", 10)));
+    public static ArrayList<ActionItem> towers = new ArrayList<ActionItem>(Arrays.asList(
+            new ActionItem("resources/Dung Tower.png", "resources/Dung Tower Flash.png", 15),
+            new ActionItem("resources/Book Store.png", "resources/Book Store Flash.png", 30),
+            new ActionItem("resources/Boiling Water Tower.png", "resources/Boiling Water Tower Flash.png", 50),
+            new ActionItem("resources/Navi.png", "resources/Navi Flash.png", 70)));
+    public static ArrayList<ActionItem> heroes = new ArrayList<ActionItem>(Arrays.asList(
+            new ActionItem("resources/Standard Unit.png", "resources/Standard Unit.png", 1),
+            new ActionItem("resources/Goat.png", "resources/Goat.png", 10),
+            new ActionItem("resources/Wreck it Ralph.png", "resources/Wreck it Ralph.png", 15),
+             new ActionItem("resources/Scrim.png", "resources/Scrim.png", 25),
+            new ActionItem("resources/Katamari.png", "resources/Katamari.png", 35),
+            new ActionItem("resources/Link.png", "resources/Link.png", 55)
+    ));
+
+
+
+
 
 
 

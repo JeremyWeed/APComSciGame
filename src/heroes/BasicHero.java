@@ -15,7 +15,7 @@ public class BasicHero extends Hero{
     }
     public static int price = 1;
     public BasicHero(Map map){
-        super(map, "resources/Goat.png", 10, 1, 11);
+        super(map, "resources/Goat.png", 10, 1, 11, 10);
         Entities.heroes.add(this);
     }
 
