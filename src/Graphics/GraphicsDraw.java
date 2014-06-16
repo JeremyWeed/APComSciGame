@@ -58,7 +58,7 @@ public class GraphicsDraw{
         Graphics2D g = (Graphics2D) gf.bufferStrategy.getDrawGraphics();
         g.setColor(Color.RED);
         g.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
-        g.drawString(Var.GAME_END_STRING, (map.size[0] * Var.GRID_SIZE / 2) - 75, map.size[1] * Var.GRID_SIZE / 2);
+        g.drawString(Var.GAME_END_STRING, (map.size[0] * Var.GRID_SIZE / 2) - 125, map.size[1] * Var.GRID_SIZE / 2);
         g.dispose();
         gf.bufferStrategy.show();
     }
