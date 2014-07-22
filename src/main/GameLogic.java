@@ -58,7 +58,7 @@ public class GameLogic implements Runnable {
     public static void draw(Graphics2D g){
         towerBar.draw(g);
         heroBar.draw(g);
-        g.setColor(Color.RED);
+        g.setColor(Color.black);
         g.drawString("MONEY: " + money, 0,10);
         g.drawString("ENERGY: " + energy, 100,10);
         g.drawString("ROUND " + round, 200,10);
@@ -78,7 +78,7 @@ public class GameLogic implements Runnable {
     }
 
     public static void newRound(){
-        maxEnergy += (Var.ENERGY_PER_LEVEL * percent);
+        maxEnergy += Var.ENERGY_PER_LEVEL_BASE + (Var.ENERGY_PER_LEVEL * percent);
         energy = maxEnergy;
     }
 

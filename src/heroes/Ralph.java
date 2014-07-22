@@ -17,7 +17,7 @@ public class Ralph extends Hero
 	
 	public Ralph(Map map)
 	{
-		super(map, "resources/Wreck it Ralph.png", 250, 8, 1,10);
+		super(map, "resources/Wreck it Ralph.png", 250, 8, 1,5);
         Entities.heroes.add(this);
         GameLogic.energy -= price;
 	}

@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class StandardUnit extends Hero
 {
-    public static int price = 1;
+    public static int price = 2;
 	public String getName()
 	{
 		return "standard";

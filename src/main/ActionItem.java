@@ -1,5 +1,7 @@
 package main;
 
+import heroes.*;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -43,12 +45,12 @@ public class ActionItem {
             new ActionItem("resources/Boiling Water Tower.png", "resources/Boiling Water Tower Flash.png", 50),
             new ActionItem("resources/Navi.png", "resources/Navi Flash.png", 70)));
     public static ArrayList<ActionItem> heroes = new ArrayList<ActionItem>(Arrays.asList(
-            new ActionItem("resources/Standard Unit.png", "resources/Standard Unit.png", 1),
-            new ActionItem("resources/Goat.png", "resources/Goat.png", 10),
-            new ActionItem("resources/Wreck it Ralph.png", "resources/Wreck it Ralph.png", 15),
-             new ActionItem("resources/Scrim.png", "resources/Scrim.png", 25),
-            new ActionItem("resources/Katamari.png", "resources/Katamari.png", 35),
-            new ActionItem("resources/Link.png", "resources/Link.png", 55)
+            new ActionItem("resources/Standard Unit.png", "resources/Standard Unit.png", StandardUnit.price),
+            new ActionItem("resources/Goat.png", "resources/Goat.png", Goat.price),
+            new ActionItem("resources/Wreck it Ralph.png", "resources/Wreck it Ralph.png", Ralph.price),
+             new ActionItem("resources/Scrim.png", "resources/Scrim.png", Scrim.price),
+            new ActionItem("resources/Katamari.png", "resources/Katamari.png", Katamari.price),
+            new ActionItem("resources/Link.png", "resources/Link.png", Link.price)
     ));
 
 

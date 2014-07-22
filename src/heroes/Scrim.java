@@ -17,7 +17,7 @@ public class Scrim extends Hero
 	
 	public Scrim(Map map)
 	{
-		super(map, "resources/Scrim.png", 300, 8, 2,20);
+		super(map, "resources/Scrim.png", 300, 8, 2,10);
         Entities.heroes.add(this);
         GameLogic.energy -= price;
 
